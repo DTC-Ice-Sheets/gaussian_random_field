@@ -50,7 +50,7 @@ def test_main_valid_input_path(tmp_zarr_output_path, test_dataset_1_path: Path):
     input_path = test_dataset_1_path
 
     argv = [
-        "use_case_1",
+        "gaussian_random_field",
         "--mesh_name",
         "watsonmesh",
         "--data_path",
@@ -76,7 +76,7 @@ def test_main_valid_input_url(
     with (
         # to avoid making an actual HTTP request, we patch the load_dataset function to return our fixture dataset
         patch(
-            "use_case_1.grf_module_entrypoint.xr.load_dataset",
+            "gaussian_random_field.grf_module_entrypoint.xr.load_dataset",
             return_value=test_dataset_1_loaded_zarr,
         ),
         patch.object(
@@ -113,7 +113,7 @@ def test_main_multiple_timesteps(test_dataset_1_loaded_zarr: xr.Dataset, tmp_zar
     two_steps = two_steps.assign_coords(time=[0, 1])
 
     with (
-        patch("use_case_1.grf_module_entrypoint.xr.load_dataset", return_value=two_steps),
+        patch("gaussian_random_field.grf_module_entrypoint.xr.load_dataset", return_value=two_steps),
         patch.object(
             sys,
             "argv",
@@ -149,7 +149,7 @@ def test_main_fills_a_flat_timestep(test_dataset_1_loaded_zarr: xr.Dataset, tmp_
     two_steps = two_steps.assign_coords(time=[0, 1])
 
     with (
-        patch("use_case_1.grf_module_entrypoint.xr.load_dataset", return_value=two_steps),
+        patch("gaussian_random_field.grf_module_entrypoint.xr.load_dataset", return_value=two_steps),
         patch.object(sys, "argv", [*_ARGV, "--output_path", str(tmp_zarr_output_path)]),
     ):
         app(result_action="return_value")
@@ -187,7 +187,7 @@ def test_main_fills_only_the_variable_that_is_flat(
     mixed["lake_area_fraction"] = flat
 
     with (
-        patch("use_case_1.grf_module_entrypoint.xr.load_dataset", return_value=mixed),
+        patch("gaussian_random_field.grf_module_entrypoint.xr.load_dataset", return_value=mixed),
         patch.object(sys, "argv", [*_ARGV, "--output_path", str(tmp_zarr_output_path)]),
     ):
         app(result_action="return_value")
@@ -213,7 +213,7 @@ def test_main_raises_when_every_timestep_is_flat(
     """With nothing in the record fitted, filling it all in would return a constant, not a fit."""
     with (
         patch(
-            "use_case_1.grf_module_entrypoint.xr.load_dataset",
+            "gaussian_random_field.grf_module_entrypoint.xr.load_dataset",
             return_value=_flatten(test_dataset_1_loaded_zarr),
         ),
         patch.object(sys, "argv", [*_ARGV, "--output_path", str(tmp_zarr_output_path)]),

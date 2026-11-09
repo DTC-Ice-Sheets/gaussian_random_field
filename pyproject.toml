@@ -3,14 +3,17 @@ requires = ["poetry>=1.5"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "use_case_1"
+name = "gaussian_random_field"
 version = "0.0.30"
-description = "DTC-IS Hydropower modules aimed to predict climatically driven changes to freshwater flux from the Greenland Ice Sheet into the proglacial environment."
-authors = ["Lancaster University"]
+description = "DTC-IS module that fits a Gaussian Random Field to an input field of surface meltwater runoff or supraglacial lake intensity."
+authors = [
+    "Amber Leeson <a.leeson@lancaster.ac.uk>",
+    "DTC-IS consortium <support@dtc-ice-sheets.org>",
+]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/dtc-ice-sheets/use_case_1"
-packages = [{ include = "use_case_1", from = "src" }]
+homepage = "https://github.com/dtc-ice-sheets/gaussian_random_field"
+packages = [{ include = "gaussian_random_field", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
@@ -19,7 +22,7 @@ rpy2 = "^3.6.4"
 pandas = "^2.3.3"
 xarray = "^2025.12.0"
 zarr = "^3.1.2"
-dask = {extras = ["array"], version = "^2026.8.0"}
+dask = { extras = ["array"], version = "^2026.8.0" }
 shapely = "^2.1.2"
 cyclopts = "^4.8.0"
 requests = "^2.34.2"
@@ -51,33 +54,33 @@ target-version = "py312"
 preview = true
 select = [
     "T20", # Disallow print statements
-    "A",    # Ambiguity
-    "ANN",  # Annotations
-    "B",    # Bad practices
-    "C90",    # Complexity
-    "D",    # Documentation
-    "E",    # Errors
-    "F",    # Pyflakes (e.g. unused imports and vars)
-    "G",    # logging formatting
-    "I",    # Imports
-    "N",    # Naming
-    "Q",    # Quoting
-    "W",    # Warnings
-    "PT",   # pytest-style
-    "SIM",  # flake8-simplify
-    "C4",   # flake8-comprehensions
-    "ARG",  # flake8-unused-arguments
-    "PIE",  # flake8-pie
-    "RUF",  # Ruff-specific rules
-    "BLE",  # Blind except
-    "RET",  # Return statements
-    "PTH",  # Use pathlib
-    "PD",   # Pandas
+    "A",   # Ambiguity
+    "ANN", # Annotations
+    "B",   # Bad practices
+    "C90", # Complexity
+    "D",   # Documentation
+    "E",   # Errors
+    "F",   # Pyflakes (e.g. unused imports and vars)
+    "G",   # logging formatting
+    "I",   # Imports
+    "N",   # Naming
+    "Q",   # Quoting
+    "W",   # Warnings
+    "PT",  # pytest-style
+    "SIM", # flake8-simplify
+    "C4",  # flake8-comprehensions
+    "ARG", # flake8-unused-arguments
+    "PIE", # flake8-pie
+    "RUF", # Ruff-specific rules
+    "BLE", # Blind except
+    "RET", # Return statements
+    "PTH", # Use pathlib
+    "PD",  # Pandas
 ]
 
 [tool.pydoclint]
-style='numpy'
-check_style_mismatch="true"
+style = 'numpy'
+check_style_mismatch = "true"
 
 mccabe = { max-complexity = 10 }
 
@@ -91,11 +94,11 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = [
-    "print", # Allow print statements in test files, as they are commonly used for debugging
+    "print",                            # Allow print statements in test files, as they are commonly used for debugging
     "module-import-not-at-top-of-file", # Allow 'import' statements not being at the top of the file (common in test files for clarity)
-    "assert", # Allow the use of 'assert' statements in test files (common practice in pytest)
-    "undocumented-public-function", # Ignore missing docstring warnings for functions in test files (commonly not required for small test functions)
-    "ANN",  # Ignore missing type annotations for functions in test files (commonly not required for small test functions)
+    "assert",                           # Allow the use of 'assert' statements in test files (common practice in pytest)
+    "undocumented-public-function",     # Ignore missing docstring warnings for functions in test files (commonly not required for small test functions)
+    "ANN",                              # Ignore missing type annotations for functions in test files (commonly not required for small test functions)
 ]
 
 [tool.ruff.lint.pydocstyle]
@@ -104,11 +107,9 @@ convention = "numpy" # Accepts: "google", "numpy", or "pep257"
 skips = ['*_test.py', '*/test_*.py']
 
 [tool.pytest.ini_options]
-addopts = "--disable-warnings --cov use_case_1 --cov-fail-under=80"
-typeguard-packages = """use_case_1"""
+addopts = "--disable-warnings --cov gaussian_random_field --cov-fail-under=80"
+typeguard-packages = """gaussian_random_field"""
 typeguard-debug-instrumentation = true
 typeguard-forward-ref-policy = "ERROR"
 typeguard-collection-check-strategy = "ALL_ITEMS"
-markers = [
-    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
-]
+markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]

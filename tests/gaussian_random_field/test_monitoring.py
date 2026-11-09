@@ -7,7 +7,7 @@ from gaussian_random_field.monitoring import setup_logging
 
 
 def test_setup_logging():
-    with patch("use_case_1.monitoring.logging.getLogger") as mock_get_logger:
+    with patch("gaussian_random_field.monitoring.logging.getLogger") as mock_get_logger:
         mock_logger = mock_get_logger.return_value
         setup_logging()
 

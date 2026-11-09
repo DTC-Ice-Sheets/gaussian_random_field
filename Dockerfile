@@ -31,11 +31,7 @@ ENV LD_LIBRARY_PATH="/usr/local/lib/R/lib:/usr/local/lib:/usr/lib/x86_64-linux-g
 ENV PATH="/app/.venv/bin:$PATH"
 
 FROM base AS test
-RUN --mount=type=secret,id=github_token,required=true \
-    umask 077 && \
-    trap 'rm -f /root/.netrc' EXIT && \
-    printf 'machine github.com login git password %s\n' "$(cat /run/secrets/github_token)" > /root/.netrc && \
-    poetry install --no-root --with dev --without deployment
+RUN poetry install --no-root --with dev --without deployment
 
 FROM test AS devcontainer
 COPY . /app/

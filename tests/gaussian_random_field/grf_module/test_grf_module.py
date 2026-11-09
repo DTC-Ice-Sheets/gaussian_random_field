@@ -146,7 +146,7 @@ def test_spde_mesh_can_be_instantiated(spde_mesh):
 def log_test_data(test_data) -> xr.Dataset:
     # The fit is unstable on raw flux (mostly near zero, long tail) and sometimes
     # collapses to a flat field. It is stable on a log scale, which is also how
-    # the Use Case 1 notebook fits runoff.
+    # the Gaussian Random Field notebook fits runoff.
     test_data["land_ice_runoff_flux"] = np.log10(1 + test_data["land_ice_runoff_flux"])
     return test_data
 
