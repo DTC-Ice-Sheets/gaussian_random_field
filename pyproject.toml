@@ -40,7 +40,7 @@ sphinx = "^9.1.0"
 sphinx-rtd-theme = "^3.1.0"
 sphinx-copybutton = "^0.5.2"
 commitizen = "^4.12.1"
-pydoclint = "^0.8.3"
+pydoclint = ">=0.8.3,<0.13.0"
 pyproj = "^3.8.0"
 
 [tool.poetry.group.deployment.dependencies]
