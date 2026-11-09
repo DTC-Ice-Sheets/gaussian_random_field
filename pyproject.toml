@@ -3,39 +3,45 @@ requires = ["poetry>=1.5"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "dtc_python_template"
-version = "0.0.66"
-description = "Template repository for DTC Ice Sheets Python Packages."
-authors = ["Earthwave Ltd <info@earthwave.co.uk>"]
+name = "use_case_1"
+version = "0.0.30"
+description = "DTC-IS Hydropower modules aimed to predict climatically driven changes to freshwater flux from the Greenland Ice Sheet into the proglacial environment."
+authors = ["Lancaster University"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/dtc-ice-sheets/dtc_python_template"
-packages = [{ include = "dtc_python_template", from = "src" }]
+homepage = "https://github.com/dtc-ice-sheets/use_case_1"
+packages = [{ include = "use_case_1", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
-numpy = "^2.4"
-cyclopts = "^4.5.1"
+numpy = "^2.3"
+rpy2 = "^3.6.4"
+pandas = "^2.3.3"
+xarray = "^2025.12.0"
+zarr = "^3.1.2"
+dask = {extras = ["array"], version = "^2026.8.0"}
+shapely = "^2.1.2"
+cyclopts = "^4.8.0"
+requests = "^2.34.2"
+aiohttp = "^3.14.1"
+rioxarray = "^0.19.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.0.2"
-typeguard = "^4.4.4"
+typeguard = "^4.5.1"
 pre-commit = "^4.5"
-ruff = "^0.14.14"
+ruff = "^0.17.4"
 bandit = "^1.9.3"
 pytest-cov = "^7.0.0"
 sphinx = "^9.1.0"
-sphinx-rtd-theme = "^3.0.2"
+sphinx-rtd-theme = "^3.1.0"
 sphinx-copybutton = "^0.5.2"
-commitizen = "^4.11.6"
+commitizen = "^4.12.1"
 pydoclint = "^0.8.3"
-
-# Only installed in the production Docker image, which runs the package through dtc-wrapper.
-[tool.poetry.group.deployment]
-optional = true
+pyproj = "^3.8.0"
 
 [tool.poetry.group.deployment.dependencies]
-dtc-wrapper = { git = "https://github.com/DTC-Ice-Sheets/dtc_wrapper.git", tag = "0.0.43" }
+dtc-wrapper = { git = "https://github.com/DTC-Ice-Sheets/dtc_wrapper.git", branch = "main" }
 
 [tool.ruff]
 line-length = 120
@@ -85,10 +91,10 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = [
-    "T201", # Allow print statements in test files, as they are commonly used for debugging
-    "E402", # Allow 'import' statements not being at the top of the file (common in test files for clarity)
-    "S101", # Allow the use of 'assert' statements in test files (common practice in pytest)
-    "D103", # Ignore missing docstring warnings for functions in test files (commonly not required for small test functions)
+    "print", # Allow print statements in test files, as they are commonly used for debugging
+    "module-import-not-at-top-of-file", # Allow 'import' statements not being at the top of the file (common in test files for clarity)
+    "assert", # Allow the use of 'assert' statements in test files (common practice in pytest)
+    "undocumented-public-function", # Ignore missing docstring warnings for functions in test files (commonly not required for small test functions)
     "ANN",  # Ignore missing type annotations for functions in test files (commonly not required for small test functions)
 ]
 
@@ -98,8 +104,11 @@ convention = "numpy" # Accepts: "google", "numpy", or "pep257"
 skips = ['*_test.py', '*/test_*.py']
 
 [tool.pytest.ini_options]
-addopts = "--disable-warnings --cov dtc_python_template --cov-fail-under=80"
-typeguard-packages = """dtc_python_template"""
+addopts = "--disable-warnings --cov use_case_1 --cov-fail-under=80"
+typeguard-packages = """use_case_1"""
 typeguard-debug-instrumentation = true
 typeguard-forward-ref-policy = "ERROR"
 typeguard-collection-check-strategy = "ALL_ITEMS"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]

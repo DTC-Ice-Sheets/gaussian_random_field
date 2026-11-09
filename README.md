@@ -1,127 +1,135 @@
-![example workflow](https://github.com/dtc-ice-sheets/dtc_python_template/actions/workflows/dtc_python_template_test.yml/badge.svg)
-![example workflow](https://github.com/dtc-ice-sheets/dtc_python_template/actions/workflows/dtc_python_template_deploy.yml/badge.svg)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/DTC-Ice-Sheets/dtc_python_template/blob/main/LICENSE)
+![example workflow](https://github.com/dtc-ice-sheets/use_case_1/actions/workflows/use_case_1_test.yml/badge.svg)
+![example workflow](https://github.com/dtc-ice-sheets/use_case_1/actions/workflows/use_case_1_deploy.yml/badge.svg)
 
-# dtc_python_template
+# use_case_1
 
-This repository serves as a template for the creation of new DTC Python Packages.
+DTC-IS Hydropower modules aimed to predict climatically driven changes to freshwater flux from the Greenland Ice Sheet into the proglacial environment.
 
 **Please familiarise yourself with the [DTC Ice Sheets Development Guide](https://dtc-ice-sheets.github.io/dtc_python_template/) before proceeding.**
 
-## Installation for Use
 
-If you simply want to use this package, read this section. If instead you want to develop (i.e. change) this package,
-please read the next section. If you don't know what a Conda environment is or how to use one, please stop here and
-ask one of the Earthwave software engineers to help you out.
+## Installation
 
-You may install this package from the GitHub artifact registry. This registry is private to the DTC Ice Sheets project.
-To authenticate, you must first ensure you are logged into a GitHub account which is a part of the DTC Ice Sheets
-organisation.
+Due to the dependency on R packages, by far the easiest way to use this module is inside of a Docker container, using the provided Dockerfile.
 
-Then, to download and install the latest version from the DTC Ice Sheets GitHub repository:
+Start by [installing and setting up Docker](https://docs.docker.com/engine/install/).
 
-```
-pip install git+https://github.com/dtc-ice-sheets/dtc_python_template.git
+Then, clone the repository:
+```bash
+git clone https://github.com/dtc-ice-sheets/use_case_1.git
+cd use_case_1
 ```
 
-You can then use this package as follows (obviously you will need to edit this section after copying this template):
-
+You will need a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-tokens) with access to the DTC Ice Sheets private repositories for the Docker build process to install some of the Python dependencies:
+```bash
+echo "YOUR GITHUB TOKEN HERE" > .gh_token
 ```
-python -m dtc_python_template.example_entrypoint_a --integer_a <number_a> --integer_b <number_b>
+
+The token is mounted only during dependency installation and is not stored in the image.
+The Docker build context excludes local credentials and virtual environments.
+
+The shared Dockerfile provides three build targets:
+
+- `devcontainer`: development dependencies and source code, selected automatically by VSCode.
+- `test`: development dependencies without source code, used by CI.
+- `deployment`: deployment dependencies and the installed application, the default target.
+
+If using VSCode, the rest of the setup is made very easy by the "dev containers" feature.
+
+### Option 1: Setup using VSCode dev containers (highly recommended!)
+
+1. Open the cloned repository folder in VSCode.
+2. Click the blue box at the very bottom left of the VSCode window, and then click "Dev Containers: Reopen in Container". \
+ For more guidance on this, see the [dev containers documentation](https://code.visualstudio.com/docs/devcontainers/containers).
+3. Wait for the Docker setup to finish (might take a few minutes).
+4. There should be a popup in the bottom right asking you to install recommended extensions, click "Yes". Otherwise go to the "Extensions" tab and install all the extensions that are marked as recommended.
+5. Open a Python file, and ensure in the very bottom right of the VSCode window that the Python environment is set to "use-case-1-py3.13", located at `/app/.venv/bin/python`.
+6. Click on the "Testing" tab icon on the left of the VSCode window. From there, click "Refresh Tests", and then click "Run Tests". After a short while you should see that all test have passed with a green check.
+
+And that's it!
+
+Note that the list of VSCode projects should now show two copies of this project: one labelled as "dev container", and one not.
+You should ignore the normal project and make sure to always do all development work inside the dev container project.
+If you are in the correct project the blue box in the bottom left should start with "Dev Container: ...".
+If it doesn't, repeat Step 2 to switch to the correct project.
+
+If there were no issues, you can now skip to the "Development" section.
+
+### Option 2: Manual Docker setup
+
+This section documents how to setup a Docker environment manually, in case VSCode with dev containers is not available for any reason.
+
+The first step is to build the container, providing the GitHub token as a secret:
+```bash
+docker build --target deployment --secret id=github_token,src=.gh_token -t dtc-ice-sheets-use-case-1 .
 ```
 
-or
+For a development or CI image, replace `--target deployment` with `--target devcontainer`
+or `--target test`, respectively. Development and test images exclude the deployment
+dependency group; deployment images exclude the development dependency group.
 
-```
-python -m dtc_python_template.example_entrypoint_b --integer_a <number_a> --integer_b <number_b>
+Once this completes, the package module CLI can be used as follows:
+```bash
+docker run dtc-ice-sheets-use-case-1 python -m use_case_1.grf_module_entrypoint --mesh_name <mesh_name> --data_path <data_path> --output_path <output_path>
 ```
 
 For more help, run:
-
-```
-python -m dtc_python_template.example_entrypoint_a -h
-```
-
-## Installation for Development
-
-To develop this package, please clone the repository:
-
-```
-git clone https://github.com/dtc-ice-sheets/dtc_python_template.git
-cd dtc_python_template
+```bash
+docker run dtc-ice-sheets-use-case-1 python -m use_case_1.grf_module_entrypoint -h
 ```
 
-This project uses poetry to manage package dependencies and virtual environments.
-
-You will need an environment with Python 3.12 and Poetry installed.
-
-We recommend installing Python through Miniconda. To set up Miniconda, you may follow the [quick command-line instructions](<https://docs.anaconda.com/miniconda/install#quick-command-line-install)
-or download a graphical installer for your operating system [here](https://docs.anaconda.com/miniconda/install/) for a
-more user-friendly interface.
-
-Then, you may create your environment and install poetry with:
-
-```
-conda create --name dtc python=3.12
-conda activate dtc
-conda install -c conda-forge poetry=2.1
+You can also start an interactive shell session within the docker container:
+```bash
+docker run -it dtc-ice-sheets-use-case-1 bash
 ```
 
-Alternatively, you may install Python 3.12 from the [download page](https://www.python.org/downloads/) and then install
-poetry with:
+## Development
 
-```
-curl -sSL https://install.python-poetry.org | python3.12 -
-```
-
-Note: If you prefer managing your environments with a tool like Conda, you must tell Poetry to stop creating environments:
-
-```
-poetry config virtualenvs.create false
-```
-
-Once you have an environment with Python 3.12 and poetry, you may now install the package for development with:
-
-```
+Install the dev dependencies:
+```bash
 poetry install --with dev
 ```
 
-If you're using VSCode, note that you'll need to [tell VSCode to use the interpreter within the environment you've just created](https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment).
+Update LD_LIBRARY_PATH so that R has access to its internal libraries.
+```bash
+export LD_LIBRARY_PATH="$(python -m rpy2.situation LD_LIBRARY_PATH):${LD_LIBRARY_PATH}"
+```
 
 Next, install the pre-commit hooks:
-
-```
+```bash
 pre-commit install
 ```
 
 Now, you should be able to run and pass the precommit hooks in your environment:
-
-```
+```bash
 pre-commit
 ```
 
 Note: If in need to push code that's not passing pre-commit's checks you can still commit using the --no-verify flag
 
-```
+```bash
 git commit --no-verify -m "Commit message"
 ```
 
-You may also run the unit tests on their own with:
+You may also run checks on their own with the appropriate command:
 
-```
-pytest
+```bash
+# Docstring linting
+poetry run pydoclint src
+
+# Linting (with automatic fixes)
+poetry run ruff check --fix
+
+# Check for security issues
+poetry run bandit -r src --severity-level medium --confidence-level medium --quiet
+
+# Run tests
+poetry run pytest
 ```
 
 Pushing directly to main is prohibited. If you wish your work to be included, first push a separate branch to
 the repository and then open a Pull Request. All branches that have not received a commit for more than 30 days
 will be automatically deleted.
-
-## Building locally
-
-To build the Sphinx documentation locally, run:
-
-    poetry run sphinx-build -M html docs/source docs/build
-
 
 ## Versioning and releases
 

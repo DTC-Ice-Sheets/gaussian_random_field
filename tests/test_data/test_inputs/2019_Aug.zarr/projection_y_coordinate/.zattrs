@@ -1,0 +1,10 @@
+{
+  "standard_name": "projection_y_coordinate",
+  "long_name": "projection_y_coordinate",
+  "units": "m",
+  "axis": "Y",
+  "_ARRAY_DIMENSIONS": [
+    "projection_y_coordinate"
+  ],
+  "grid_mapping": "spatial_ref"
+}

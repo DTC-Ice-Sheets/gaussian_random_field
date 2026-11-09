@@ -3,19 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-DTC Ice Sheets Development Guide
+Hydropower
 =================================
 
-Welcome to the DTC IS Development Guide! This guide will walk you through setting up a development environment, creating
-a repository from the DTC Python template, adhering to our coding standards, and contributing code to the project.
-
-This documentation is not exhaustive - please reach out to the engineering team if you have any questions :)
+DTC Ice Sheets Use Case 1, aimed to predict climatically driven changes to freshwater flux from the Greenland Ice Sheet into the proglacial environment.
 
 .. toctree::
    :maxdepth: 1
-   :caption: How do I...:
-
-   Set up my environment? <development_environment.rst>
-   Create my repository? <create_repository.rst>
-   Adhere to coding standards? <code_standards.rst>
-   Contribute to the codebase? <development_workflow.rst>

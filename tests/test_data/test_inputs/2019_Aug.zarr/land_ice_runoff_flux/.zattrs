@@ -1,0 +1,11 @@
+{
+  "standard_name": "land_ice_runoff_flux",
+  "units": "kg m-2 s-1",
+  "_FillValue": -9999,
+  "_ARRAY_DIMENSIONS": [
+    "time",
+    "projection_y_coordinate",
+    "projection_x_coordinate"
+  ],
+  "grid_mapping": "spatial_ref"
+}

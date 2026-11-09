@@ -1,0 +1,10 @@
+{
+  "standard_name": "projection_x_coordinate",
+  "long_name": "projection_x_coordinate",
+  "units": "m",
+  "axis": "X",
+  "_ARRAY_DIMENSIONS": [
+    "projection_x_coordinate"
+  ],
+  "grid_mapping": "spatial_ref"
+}

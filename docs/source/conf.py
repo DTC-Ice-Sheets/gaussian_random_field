@@ -1,4 +1,4 @@
-#  noqa:D100
+# ruff:ignore[undocumented-public-module]
 # Configuration file for the Sphinx documentation builder
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -6,14 +6,14 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-import pathlib
 import sys
+from pathlib import Path
 
-src_root = pathlib.Path("../..").resolve()
-sys.path.insert(0, src_root)
-project = "DTC Ice Sheets Development Guide"
-company_copyright = "2025, Earthwave Ltd."
-author = "Earthwave Ltd."
+src_root = Path("../..").resolve()
+sys.path.insert(0, str(src_root))
+project = "Hydropower"
+company_copyright = "2025, Lancaster University."
+author = "Lancaster University."
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
