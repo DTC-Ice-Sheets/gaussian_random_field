@@ -1,0 +1,4 @@
+/* Preserve a visible gap before the equals sign in constant signatures. */
+.rst-content dl.py.data .sig-name + .property {
+    margin-left: 0.5ch;
+}

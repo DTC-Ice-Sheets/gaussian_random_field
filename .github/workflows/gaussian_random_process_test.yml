@@ -1,0 +1,30 @@
+# When pushing to a branch, test
+# When adapting this template for your own use, please rename "gaussian_random_process" to your package name.
+name: gaussian_random_process_test
+
+on:
+  push:
+    branches-ignore:
+      - main # all branches except main (and implicitly not tags)
+
+jobs:
+  build_container_if_needed:
+    uses: ./.github/workflows/generic_build_container_if_needed.yml
+    with:
+      package_name: gaussian_random_process
+    secrets: inherit
+
+  test_with_container:
+    needs: build_container_if_needed
+    uses: ./.github/workflows/generic_test_with_container.yml
+    with:
+      package_name: gaussian_random_process
+      notebooks_allowed: true
+    secrets: inherit
+
+  # test:
+  #   uses: ./.github/workflows/generic_test.yml
+  #   with:
+  #     package_name: gaussian_random_process
+  #     notebooks_allowed: true
+  #   secrets: inherit

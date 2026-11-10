@@ -1,0 +1,13 @@
+{
+  "attributes": {
+    "_ARRAY_DIMENSIONS": [
+      "time",
+      "x",
+      "spatial_ref",
+      "y"
+    ]
+  },
+  "zarr_format": 3,
+  "consolidated_metadata": null,
+  "node_type": "group"
+}
