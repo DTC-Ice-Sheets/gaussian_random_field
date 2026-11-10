@@ -15,10 +15,10 @@ supraglacial lake intensity. It was developed to provide hydropower insights for
 the Greenland ice sheet.
 
 For a more interactive way of exploring the system, please visit the digital twin's
-`dashboard <https://dashboards.dtc-ice-sheets.org/>`_.
+`dashboard <https://dashboards.dtc-ice-sheets.org/>`_ and/or explore the `notebooks <https://colab.research.google.com/github/DTC-Ice-Sheets/dtc_is_notebooks/>`_.
 
 The remainder of this documentation page provides an overview of the ``gaussian_random_field`` module and details
-about how to get it running locally.
+on how to get it running locally.
 
 .. toctree::
    :maxdepth: 1
