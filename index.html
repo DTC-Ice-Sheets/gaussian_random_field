@@ -6,10 +6,11 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DTC Ice Sheets Development Guide &mdash; DTC Ice Sheets Development Guide  documentation</title>
+  <title>Gaussian Random Field Module &mdash; Gaussian Random Field  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=94c7bfb3" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -22,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Development Environment" href="development_environment.html" /> 
+    <link rel="next" title="Overview" href="overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +35,7 @@
           
           
           <a href="#" class="icon icon-home">
-            DTC Ice Sheets Development Guide
+            Gaussian Random Field
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,12 +45,10 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">How do I...:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="development_environment.html">Set up my environment?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_repository.html">Create my repository?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code_standards.html">Adhere to coding standards?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="development_workflow.html">Contribute to the codebase?</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 </ul>
 
         </div>
@@ -58,7 +57,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">DTC Ice Sheets Development Guide</a>
+          <a href="#">Gaussian Random Field</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -66,7 +65,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">DTC Ice Sheets Development Guide</li>
+      <li class="breadcrumb-item active">Gaussian Random Field Module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -76,18 +75,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dtc-ice-sheets-development-guide">
-<h1>DTC Ice Sheets Development Guide<a class="headerlink" href="#dtc-ice-sheets-development-guide" title="Link to this heading"></a></h1>
-<p>Welcome to the DTC IS Development Guide! This guide will walk you through setting up a development environment, creating
-a repository from the DTC Python template, adhering to our coding standards, and contributing code to the project.</p>
-<p>This documentation is not exhaustive - please reach out to the engineering team if you have any questions :)</p>
+  <section id="gaussian-random-field-module">
+<h1>Gaussian Random Field Module<a class="headerlink" href="#gaussian-random-field-module" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">gaussian_random_field</span></code> module is a sub-component of the
+<a class="reference external" href="https://dtc-ice-sheets.org/">Digital Twin Component for Ice Sheets (DTC-IS)</a>, an ESA-funded, EO-driven digital twin
+project.</p>
+<p>The <cite>gaussian_random_field</cite> module  fits a Gaussian Random Field to an input field of surface meltwater runoff or
+supraglacial lake intensity. It was developed to provide hydropower insights for the Watson River catchment area in
+the Greenland ice sheet.</p>
+<p>For a more interactive way of exploring the system, please visit the digital twin’s
+<a class="reference external" href="https://dashboards.dtc-ice-sheets.org/">dashboard</a>.</p>
+<p>The remainder of this documentation page provides an overview of the <code class="docutils literal notranslate"><span class="pre">gaussian_random_field</span></code> module and details
+about how to get it running locally.</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">How do I...:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="development_environment.html">Set up my environment?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_repository.html">Create my repository?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code_standards.html">Adhere to coding standards?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="development_workflow.html">Contribute to the codebase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 </ul>
 </div>
 </section>
@@ -96,7 +100,7 @@ a repository from the DTC Python template, adhering to our coding standards, and
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="development_environment.html" class="btn btn-neutral float-right" title="Development Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

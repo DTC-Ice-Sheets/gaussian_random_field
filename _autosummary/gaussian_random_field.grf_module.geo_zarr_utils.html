@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gaussian_random_field.grf_module.geo_zarr_utils &mdash; Gaussian Random Field  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=94c7bfb3" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gaussian_random_field.grf_module.grf_module" href="gaussian_random_field.grf_module.grf_module.html" />
+    <link rel="prev" title="gaussian_random_field.grf_module" href="gaussian_random_field.grf_module.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gaussian Random Field
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gaussian_random_field.html">gaussian_random_field</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gaussian_random_field.grf_module.html">gaussian_random_field.grf_module</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">gaussian_random_field.grf_module.geo_zarr_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gaussian_random_field.grf_module.grf_module.html">gaussian_random_field.grf_module.grf_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gaussian_random_field.grf_module.gridding.html">gaussian_random_field.grf_module.gridding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gaussian_random_field.grf_module.spde_mesh.html">gaussian_random_field.grf_module.spde_mesh</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gaussian_random_field.grf_module_entrypoint.html">gaussian_random_field.grf_module_entrypoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gaussian_random_field.helpers.html">gaussian_random_field.helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gaussian_random_field.monitoring.html">gaussian_random_field.monitoring</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gaussian Random Field</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="gaussian_random_field.html">gaussian_random_field</a></li>
+          <li class="breadcrumb-item"><a href="gaussian_random_field.grf_module.html">gaussian_random_field.grf_module</a></li>
+      <li class="breadcrumb-item active">gaussian_random_field.grf_module.geo_zarr_utils</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/gaussian_random_field.grf_module.geo_zarr_utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-gaussian_random_field.grf_module.geo_zarr_utils">
+<span id="gaussian-random-field-grf-module-geo-zarr-utils"></span><h1>gaussian_random_field.grf_module.geo_zarr_utils<a class="headerlink" href="#module-gaussian_random_field.grf_module.geo_zarr_utils" title="Link to this heading"></a></h1>
+<p>Utility functions for working with GeoZarr data within the GRF module.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_data_variable_arrays" title="gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_data_variable_arrays"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_cf_data_variable_arrays</span></code></a>(ds)</p></td>
+<td><p>Assign CF grid-mapping and fill-value metadata to dataset variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_spatial_data_array" title="gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_spatial_data_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_cf_spatial_data_array</span></code></a>(...)</p></td>
+<td><p>Assign the required GeoZarr attributes to a spatial coordinate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_time_data_array" title="gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_time_data_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_cf_time_data_array</span></code></a>(time_data_array)</p></td>
+<td><p>Convert a time coordinate to numeric epoch seconds with legacy CF metadata.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gaussian_random_field.grf_module.geo_zarr_utils.save_geo_zarr" title="gaussian_random_field.grf_module.geo_zarr_utils.save_geo_zarr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_geo_zarr</span></code></a>(ds, zarr_path[, target_chunk_size])</p></td>
+<td><p>Save dataset to GeoZarr adhering to CF conventions (<a class="reference external" href="https://cfconventions.org/">https://cfconventions.org/</a>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gaussian_random_field.grf_module.geo_zarr_utils.sparse_grid_to_point_cloud" title="gaussian_random_field.grf_module.geo_zarr_utils.sparse_grid_to_point_cloud"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_grid_to_point_cloud</span></code></a>(ds)</p></td>
+<td><p>Convert a sparse grid dataset to a point cloud format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gaussian_random_field.grf_module.geo_zarr_utils.trim_to_mesh" title="gaussian_random_field.grf_module.geo_zarr_utils.trim_to_mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trim_to_mesh</span></code></a>(ds, mesh)</p></td>
+<td><p>Drop points that fall outside the mesh.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_data_variable_arrays">
+<span class="sig-name descname"><span class="pre">prepare_cf_data_variable_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_data_variable_arrays" title="Link to this definition"></a></dt>
+<dd><p>Assign CF grid-mapping and fill-value metadata to dataset variables.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_spatial_data_array">
+<span class="sig-name descname"><span class="pre">prepare_cf_spatial_data_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spatial_data_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataArray</span></span></span><a class="headerlink" href="#gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_spatial_data_array" title="Link to this definition"></a></dt>
+<dd><p>Assign the required GeoZarr attributes to a spatial coordinate.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_time_data_array">
+<span class="sig-name descname"><span class="pre">prepare_cf_time_data_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_data_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataArray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataArray</span></span></span><a class="headerlink" href="#gaussian_random_field.grf_module.geo_zarr_utils.prepare_cf_time_data_array" title="Link to this definition"></a></dt>
+<dd><p>Convert a time coordinate to numeric epoch seconds with legacy CF metadata.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gaussian_random_field.grf_module.geo_zarr_utils.save_geo_zarr">
+<span class="sig-name descname"><span class="pre">save_geo_zarr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zarr_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'1024MB'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gaussian_random_field.grf_module.geo_zarr_utils.save_geo_zarr" title="Link to this definition"></a></dt>
+<dd><p>Save dataset to GeoZarr adhering to CF conventions (<a class="reference external" href="https://cfconventions.org/">https://cfconventions.org/</a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> (<em>xr.Dataset</em>) – The xarray dataset to save. This must follow the GeoZarr format,
+including having a <cite>spatial_ref</cite> attribute with a valid CRS.</p></li>
+<li><p><strong>zarr_path</strong> (<em>Path</em><em> | </em><em>str</em>) – Full path of the output .zarr file to be created.</p></li>
+<li><p><strong>target_chunk_size</strong> (<em>str</em><em>, </em><em>optional</em>) – The target chunk size for the GeoZarr dataset, by default “1024MB”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gaussian_random_field.grf_module.geo_zarr_utils.sparse_grid_to_point_cloud">
+<span class="sig-name descname"><span class="pre">sparse_grid_to_point_cloud</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#gaussian_random_field.grf_module.geo_zarr_utils.sparse_grid_to_point_cloud" title="Link to this definition"></a></dt>
+<dd><p>Convert a sparse grid dataset to a point cloud format.</p>
+<p>This function removes NaN cells in the grid, and returns the resulting cells
+as a flattened point cloud.</p>
+<p>Data already stored as a point cloud is accepted too. Some sources are not
+on a regular grid in the target CRS - RACMO’s native run is on a rotated
+pole, so its cells do not fall on x/y axes once reprojected - and those
+datasets carry a single dimension of positions instead. They are passed
+through with the dimension renamed, rather than being gridded first.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ds</strong> (<em>xr.Dataset</em>) – <p>The input GeoZarr dataset, in one of two forms.</p>
+<dl class="simple">
+<dt>A sparse grid, with at least the following dimensions:</dt><dd><ul class="simple">
+<li><p>time (must be of length 1)</p></li>
+<li><p>x (or old name: ‘projection_x_coordinate’)</p></li>
+<li><p>y (or old name: ‘projection_y_coordinate’)</p></li>
+</ul>
+</dd>
+<dt>Or a point cloud, with:</dt><dd><ul class="simple">
+<li><p>time (must be of length 1)</p></li>
+<li><p>point (or ‘point_id’), with x and y giving each position</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dataset where the spatial X and Y dimensions have been stacked into a
+single ‘point_id’ dimension, and points where all variables are NaN
+across all timesteps have been removed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xr.Dataset</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the dataset does not have exactly one time step, or has neither a
+    pair of spatial dimensions nor a point dimension carrying x and y.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gaussian_random_field.grf_module.geo_zarr_utils.trim_to_mesh">
+<span class="sig-name descname"><span class="pre">trim_to_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gaussian_random_field.grf_module.spde_mesh.html#gaussian_random_field.grf_module.spde_mesh.SpdeMesh" title="gaussian_random_field.grf_module.spde_mesh.SpdeMesh"><span class="pre">SpdeMesh</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dataset</span></span></span><a class="headerlink" href="#gaussian_random_field.grf_module.geo_zarr_utils.trim_to_mesh" title="Link to this definition"></a></dt>
+<dd><p>Drop points that fall outside the mesh.</p>
+<p>The published input datasets cover a buffer around the catchment, while a
+mesh covers the catchment alone, so a dataset normally carries points the
+mesh cannot represent. Those points give an all-zero row in the projector
+matrix and INLA refuses the fit, so they are removed before fitting rather
+than left to fail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> (<em>xr.Dataset</em>) – A point cloud, as returned by <a class="reference internal" href="#gaussian_random_field.grf_module.geo_zarr_utils.sparse_grid_to_point_cloud" title="gaussian_random_field.grf_module.geo_zarr_utils.sparse_grid_to_point_cloud"><code class="xref py py-func docutils literal notranslate"><span class="pre">sparse_grid_to_point_cloud()</span></code></a>.</p></li>
+<li><p><strong>mesh</strong> (<a class="reference internal" href="gaussian_random_field.grf_module.spde_mesh.html#gaussian_random_field.grf_module.spde_mesh.SpdeMesh" title="gaussian_random_field.grf_module.spde_mesh.SpdeMesh"><em>SpdeMesh</em></a>) – The mesh the data will be fitted onto.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The same dataset with only the points the mesh covers.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xr.Dataset</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If no point falls on the mesh at all, which means the data and the
+    mesh do not describe the same place.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gaussian_random_field.grf_module.html" class="btn btn-neutral float-left" title="gaussian_random_field.grf_module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gaussian_random_field.grf_module.grf_module.html" class="btn btn-neutral float-right" title="gaussian_random_field.grf_module.grf_module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

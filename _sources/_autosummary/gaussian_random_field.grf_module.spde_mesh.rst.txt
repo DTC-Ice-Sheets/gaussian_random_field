@@ -1,0 +1,12 @@
+gaussian\_random\_field.grf\_module.spde\_mesh
+==============================================
+
+.. automodule:: gaussian_random_field.grf_module.spde_mesh
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SpdeMesh
+   

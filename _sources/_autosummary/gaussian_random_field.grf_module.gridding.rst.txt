@@ -1,0 +1,12 @@
+gaussian\_random\_field.grf\_module.gridding
+============================================
+
+.. automodule:: gaussian_random_field.grf_module.gridding
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      grid_mesh_data
+   

@@ -1,0 +1,12 @@
+gaussian\_random\_field.grf\_module\_entrypoint
+===============================================
+
+.. automodule:: gaussian_random_field.grf_module_entrypoint
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      main
+   
