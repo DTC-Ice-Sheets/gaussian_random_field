@@ -8,5 +8,17 @@
 		"dockerfile": "../Dockerfile",
 		"target": "devcontainer"
 	},
-	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"remoteEnv": {
+    "VIRTUAL_ENV": "/app/.venv"
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/app/.venv/bin/python"
+			}
+		}
+	},
+	// Install Python packages after creating the container
+	"postCreateCommand": "poetry install --only-root"
 }

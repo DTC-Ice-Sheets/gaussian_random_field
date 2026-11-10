@@ -9,6 +9,9 @@ RUN Rscript -e 'install.packages(\
     repos=c(getOption("repos"), INLA="https://inla.r-inla-download.org/R/stable"), \
     dep=TRUE)'
 
+# Verify R package installation
+RUN Rscript -e 'library(ggplot2); library(sf); library(withr); library(fmesher); library(INLA)'
+
 # Install Python 3.13
 RUN apt-get update && apt-get -y install --no-install-recommends software-properties-common openssh-client
 RUN add-apt-repository -y ppa:deadsnakes/ppa
