@@ -1,6 +1,6 @@
 # When a version tag is pushed, deploy using that tag.
-# When adapting this template for your own use, please rename "gaussian_random_process" to your package name.
-name: gaussian_random_process_deploy
+# When adapting this template for your own use, please rename "gaussian_random_field" to your package name.
+name: gaussian_random_field_deploy
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     if: github.actor != 'ew-version-bumper[bot]'
     uses: ./.github/workflows/generic_build_container_if_needed.yml
     with:
-      package_name: gaussian_random_process
+      package_name: gaussian_random_field
     secrets: inherit
 
   deploy:
@@ -20,5 +20,5 @@ jobs:
     needs: build_container_if_needed
     uses: ./.github/workflows/generic_deploy.yml
     with:
-      package_name: gaussian_random_process
+      package_name: gaussian_random_field
     secrets: inherit

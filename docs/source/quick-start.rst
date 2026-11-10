@@ -44,7 +44,7 @@ This example uses the sample input included in the repository and the bundled
 
 The input must be a GeoZarr dataset with a time dimension and spatial
 coordinates. The model accepts gridded data or point-cloud data, and supports
-local paths as well as ``http://`` and ``https://`` URLs. The output is a
+local paths as well as publically available ``http://`` and ``https://`` URLs. The output is a
 local GeoZarr store.
 
 Options

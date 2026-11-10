@@ -1,6 +1,5 @@
 """Tests for legacy-compatible GeoZarr serialization."""
 
-
 import numpy as np
 import pytest
 import xarray as xr
