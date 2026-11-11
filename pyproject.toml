@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "gaussian_random_field"
-version = "0.0.2"
+version = "0.0.3"
 description = "DTC-IS module that fits a Gaussian Random Field to an input field of surface meltwater runoff or supraglacial lake intensity."
 authors = [
     "Amber Leeson <a.leeson@lancaster.ac.uk>",
