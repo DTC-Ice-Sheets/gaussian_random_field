@@ -7,7 +7,7 @@
 The `gaussian_random_field` module is a sub-component of the
 [Digital Twin Component for Ice Sheets (DTC-IS)](https://dtc-ice-sheets.org/), an ESA-funded, EO-driven digital twin project.
 
-The `gaussian_random_field` module  fits a Gaussian Random Field to an input field of surface meltwater runoff or 
+The `gaussian_random_field` module fits a Gaussian Random Field to an input field of surface meltwater runoff or 
 supraglacial lake intensity. It was developed to provide hydropower insights for the Watson River catchment area in 
 the Greenland ice sheet.
 
@@ -19,13 +19,16 @@ The documentation includes sections on:
 1. [Scientific overview](https://dtc-ice-sheets.github.io/gaussian_random_field/overview.html)
 1. [API reference](https://dtc-ice-sheets.github.io/gaussian_random_field/api.html)
 
-For a more interactive way of exploring the system, please visit the digital twin's [dashboard](https://dashboards.dtc-ice-sheets.org/).
+For a more interactive way of exploring the system, please visit the digital twin's [dashboard](https://dashboards.dtc-ice-sheets.org/)
+and/or explore the project [notebook repository](https://github.com/DTC-Ice-Sheets/dtc_is_notebooks).
 
 ## Installation
 
-This package requires _[R](https://www.r-project.org/)_ and additional R packages and python bindings to be installed. 
+This package has a dependency on _[R](https://www.r-project.org/)_ and requires additional R packages and python 
+bindings to be installed. 
 The installation is therefore relatively complex and dependent on your OS/version & python installation.
-We provide 2 routes towards installation.
+We provide 2 routes towards installation - installing with [conda](#conda-install) and installing via a 
+[dev container](#dev-container-install-quickerrecommended).
 
 ### Conda install
 
@@ -55,14 +58,14 @@ pip install gaussian_random_field
 
 #### Troubleshooting
 
-If the `pip install` process raises dependency errors - it is very likely that you have additional packages installed
-in your base environment. 
-Note that `dtc_gaussian_random_field` inherits packages that are installed in the base environment.
+If the `pip install` process raises dependency errors - it is very that you have additional packages installed
+in your base conda environment. 
+Note that `dtc_gaussian_random_field` inherits packages that are installed in the base conda environment.
 Use the error messages to guide you which packages to remove before retrying the install process.
 
 ### Dev container install (quicker/recommended)
 
-For users of VScode, the repository dev container could be a more convenient way to install the package.
+For users of VScode, the repository dev container may be a more convenient way to install the package.
 
 #### Pre-requisites
 
