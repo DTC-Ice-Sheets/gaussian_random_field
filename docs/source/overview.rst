@@ -30,13 +30,11 @@ INLA represents in finite-element form over a triangular mesh and solves by
 approximate Bayesian inference (Lindgren, Rue and Lindström, 2011,
 `doi:10.1111/j.1467-9868.2011.00777.x
 <https://doi.org/10.1111/j.1467-9868.2011.00777.x>`_). The model is fitted with
-a Gaussian likelihood and a penalised-complexity prior on the range, with the
-hyperparameters held at their posterior mode, which keeps a run fast enough to
-repeat over a long record.
+a Gaussian likelihood and a penalised-complexity prior on the range.
 
-The **mesh** is not built here. It ships with the module as a stored R object —
+The **mesh** is not built here. It ships with the module as a stored R object -
 one is included, covering the Watson catchment in west Greenland with 295
-vertices — and the same mesh is used for every variable and every timestep, so
+vertices - and the same mesh is used for every variable and every timestep, so
 that anything fitted through this module lands on identical nodes and can be
 compared, swapped or combined. Observations lying outside it are dropped before
 fitting, since INLA refuses a fit otherwise.
@@ -84,7 +82,8 @@ intercept, and the posterior standard deviation of the spatial mean, estimated
 from 500 joint draws.
 
 Two limits are worth stating. The hyperparameters are held at their posterior
-mode, so the reported spread reflects the field given those values rather than
+mode, which is what keeps a run fast enough to repeat over a long record, but
+it means the reported spread reflects the field given those values rather than
 the uncertainty in them. And the spatial mean is taken over the whole mesh,
 which extends beyond any particular catchment outline; restricting it to a
 catchment is the caller's job.
