@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "gaussian_random_field"
 version = "0.0.3"
-description = "DTC-IS module that fits a Gaussian Random Field to an input field of surface meltwater runoff or supraglacial lake intensity."
+description = "DTC-IS module that fits a Gaussian random field to spatially distributed ice-sheet data, bringing variables of different resolution and sampling onto a shared grid with uncertainty."
 authors = [
     "Amber Leeson <a.leeson@lancaster.ac.uk>",
     "DTC-IS consortium <support@dtc-ice-sheets.org>",
@@ -19,14 +19,11 @@ packages = [{ include = "gaussian_random_field", from = "src" }]
 python = ">=3.12,<4.0"
 numpy = "^2.3"
 rpy2 = "^3.6.4"
-pandas = "^2.3.3"
 xarray = "^2025.12.0"
 zarr = "^3.1.2"
 dask = { extras = ["array"], version = "^2026.8.0" }
 shapely = "^2.1.2"
 cyclopts = "^4.8.0"
-requests = "^2.34.2"
-aiohttp = "^3.14.1"
 rioxarray = "^0.19.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -78,10 +75,6 @@ select = [
     "PD",  # Pandas
 ]
 
-[tool.pydoclint]
-style = 'numpy'
-check_style_mismatch = "true"
-
 mccabe = { max-complexity = 10 }
 
 ignore = [
@@ -91,6 +84,10 @@ ignore = [
     "D212", # Multi-line docstring summary should start at the second line
     "D213", # Multi-line docstring summary should start at the first line
 ]
+
+[tool.pydoclint]
+style = 'numpy'
+check_style_mismatch = "true"
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = [
