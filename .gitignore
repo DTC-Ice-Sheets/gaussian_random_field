@@ -28,3 +28,6 @@ build/
 .pytest_cache/
 # ruff
 .ruff_cache/
+
+# Sphinx autosummary output, regenerated on every build
+docs/source/_autosummary/
