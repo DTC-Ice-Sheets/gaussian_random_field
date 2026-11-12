@@ -20,8 +20,10 @@ def grid_mesh_data(
     ds: xr.Dataset
         The xarray dataset containing the mesh data to be gridded.
         This must have the following dimensions:
-            - time
-            - vertex_id (corresponding to the mesh vertices)
+
+        - time
+        - vertex_id (corresponding to the mesh vertices)
+
         The dataset must also contain any number of spatial variables, with
         dimensions ("time", "vertex_id").
     mesh: SpdeMesh
@@ -35,9 +37,11 @@ def grid_mesh_data(
     -------
     xr.Dataset
         A dataset containing the gridded data, with dimensions:
-            - time
-            - y
-            - x
+
+        - time
+        - y
+        - x
+
         Each of the spatial variables in the input dataset will be interpolated
         onto the new spatial coordinates, with the same name and attributes. Any
         other variables will be copied to the output dataset as-is.
