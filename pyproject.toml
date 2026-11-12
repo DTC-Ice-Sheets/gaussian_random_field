@@ -78,11 +78,11 @@ select = [
 mccabe = { max-complexity = 10 }
 
 ignore = [
-    "D203", # One blank line required before class docstring (conflicts with D211)
-    "D204", # One blank line required after class docstring
-    "D205", # Docstring with no content
-    "D212", # Multi-line docstring summary should start at the second line
-    "D213", # Multi-line docstring summary should start at the first line
+    "incorrect-blank-line-before-class",  # D203, conflicts with D211
+    "incorrect-blank-line-after-class",   # D204
+    "missing-blank-line-after-summary",   # D205
+    "multi-line-summary-first-line",      # D212
+    "multi-line-summary-second-line",     # D213
 ]
 
 [tool.pydoclint]
