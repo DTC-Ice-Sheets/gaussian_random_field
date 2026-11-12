@@ -24,6 +24,7 @@ zarr = "^3.1.2"
 dask = { extras = ["array"], version = "^2026.8.0" }
 shapely = "^2.1.2"
 cyclopts = "^4.8.0"
+aiohttp = "^3.14.1"  # not imported, but fsspec needs it to read zarr over http(s)
 rioxarray = "^0.19.0"
 
 [tool.poetry.group.dev.dependencies]
