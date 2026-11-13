@@ -199,12 +199,16 @@ class GrfModule:
         ds: xr.Dataset
             The xarray dataset containing the point data to be modeled.
             This must have the following dimensions:
-                - time (must be of length 1)
-                - point_id (flattened spatial coordinates)
+
+            - time (must be of length 1)
+            - point_id (flattened spatial coordinates)
+
             The dataset must also contain the following variables:
-                - x
-                - y
-                - Any number of spatial variables, with dimensions ("time", "point_id")
+
+            - x
+            - y
+            - Any number of spatial variables, with dimensions ("time", "point_id")
+
         spde_mesh: SpdeMesh
             The SPDE mesh object containing the mesh and SPDE model
         reproducible: bool, optional
@@ -217,16 +221,19 @@ class GrfModule:
         -------
         xr.Dataset
             A dataset containing the model results, with dimensions:
-                - time (length 1)
-                - vertex_id (length equal to the number of vertices in the mesh)
+
+            - time (length 1)
+            - vertex_id (length equal to the number of vertices in the mesh)
+
             The dataset will contain the following variables for each input
             spatial variable:
-                - {name}: Output values of dimensions ("time", "vertex_id")
-                - {name}_mean: Output mean of dimensions ("time")
-                - {name}_uncertainty: posterior sd of the fitted value at each
-                  vertex, dimensions ("time", "vertex_id")
-                - {name}_uncertainty_mean: posterior sd of the spatial mean of
-                  the fitted field, dimensions ("time")
+
+            - {name}: Output values of dimensions ("time", "vertex_id")
+            - {name}_mean: Output mean of dimensions ("time")
+            - {name}_uncertainty: posterior sd of the fitted value at each
+              vertex, dimensions ("time", "vertex_id")
+            - {name}_uncertainty_mean: posterior sd of the spatial mean of
+              the fitted field, dimensions ("time")
 
         Raises
         ------

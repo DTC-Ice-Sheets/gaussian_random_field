@@ -11,13 +11,13 @@ Requirements
 
 Use Python 3.12 or newer, and install the project dependencies with Poetry.
 The model also requires R with the ``fmesher`` and ``INLA`` packages installed.
-The supplied ``create.sh`` script creates a Conda environment named
-``inla_env`` with Python, R, and those R packages:
+The supplied ``create-conda-env-with-R.sh`` script creates a Conda environment named
+``dtc_gaussian_random_field`` with Python, R, and those R packages:
 
 .. code-block:: bash
 
-   ./create.sh
-   conda activate inla_env
+   ./create-conda-env-with-R.sh
+   conda activate dtc_gaussian_random_field
    poetry install
 
 Run the command from the repository root. For a list of arguments and their

@@ -1,15 +1,16 @@
 ![Tests](https://github.com/dtc-ice-sheets/gaussian_random_field/actions/workflows/gaussian_random_field_test.yml/badge.svg)
 ![Deployment](https://github.com/dtc-ice-sheets/gaussian_random_field/actions/workflows/gaussian_random_field_deploy.yml/badge.svg)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/DTC-Ice-Sheets/gaussian_random_field/blob/main/LICENSE)
+[![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/DTC-Ice-Sheets/gaussian_random_field/blob/main/LICENSE)
 
 # DTC-IS _Gaussian Random Field_
 
 The `gaussian_random_field` module is a sub-component of the
 [Digital Twin Component for Ice Sheets (DTC-IS)](https://dtc-ice-sheets.org/), an ESA-funded, EO-driven digital twin project.
 
-The `gaussian_random_field` module fits a Gaussian Random Field to an input field of surface meltwater runoff or 
-supraglacial lake intensity. It was developed to provide hydropower insights for the Watson River catchment area in 
-the Greenland ice sheet.
+The `gaussian_random_field` module fits a Gaussian random field to spatially distributed ice-sheet data, bringing
+variables of different resolution and sampling onto a shared grid and carrying an estimate of uncertainty with them.
+It was developed to provide hydropower insights for the Watson River catchment on the Greenland ice sheet, where it
+harmonises climate-model surface runoff and a satellite record of supraglacial lake cover onto one mesh.
 
 For an in-depth overview of the gaussian_random_field module please [read the docs](https://dtc-ice-sheets.github.io/gaussian_random_field/).
 
@@ -58,7 +59,7 @@ pip install gaussian_random_field
 
 #### Troubleshooting
 
-If the `pip install` process raises dependency errors - it is very that you have additional packages installed
+If the `pip install` process raises dependency errors - it is very likely that you have additional packages installed
 in your base conda environment. 
 Note that `dtc_gaussian_random_field` inherits packages that are installed in the base conda environment.
 Use the error messages to guide you which packages to remove before retrying the install process.
