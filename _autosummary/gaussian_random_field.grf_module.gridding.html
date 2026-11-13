@@ -114,12 +114,10 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ds</strong> (<em>xr.Dataset</em>) – <p>The xarray dataset containing the mesh data to be gridded.
 This must have the following dimensions:</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p>time</p></li>
 <li><p>vertex_id (corresponding to the mesh vertices)</p></li>
 </ul>
-</div></blockquote>
 <p>The dataset must also contain any number of spatial variables, with
 dimensions (“time”, “vertex_id”).</p>
 </p></li>
@@ -129,14 +127,12 @@ dimensions (“time”, “vertex_id”).</p>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>A dataset containing the gridded data, with dimensions:</dt><dd><ul class="simple">
+<dd class="field-even"><p><p>A dataset containing the gridded data, with dimensions:</p>
+<ul class="simple">
 <li><p>time</p></li>
 <li><p>y</p></li>
 <li><p>x</p></li>
 </ul>
-</dd>
-</dl>
 <p>Each of the spatial variables in the input dataset will be interpolated
 onto the new spatial coordinates, with the same name and attributes. Any
 other variables will be copied to the output dataset as-is.</p>

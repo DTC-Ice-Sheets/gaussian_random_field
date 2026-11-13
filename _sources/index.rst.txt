@@ -10,9 +10,11 @@ The ``gaussian_random_field`` module is a sub-component of the
 `Digital Twin Component for Ice Sheets (DTC-IS) <https://dtc-ice-sheets.org/>`_, an ESA-funded, EO-driven digital twin
 project.
 
-The ``gaussian_random_field`` module fits a `Gaussian Random Field` to an input field of surface meltwater runoff or 
-supraglacial lake intensity. It was developed to provide hydropower insights for the Watson River catchment area in 
-the Greenland ice sheet.
+The ``gaussian_random_field`` module fits a Gaussian random field to spatially distributed ice-sheet data,
+bringing variables of different resolution and sampling onto a shared grid and carrying an estimate of
+uncertainty with them. It was developed to provide hydropower insights for the Watson River catchment on the
+Greenland ice sheet, where it harmonises climate-model surface runoff and a satellite record of supraglacial
+lake cover onto one mesh.
 
 For a more interactive way of exploring the system, please visit the digital twin's
 `dashboard <https://dashboards.dtc-ice-sheets.org/>`_ and/or explore the `notebooks <https://colab.research.google.com/github/DTC-Ice-Sheets/dtc_is_notebooks/>`_.

@@ -91,10 +91,10 @@ field onto a regular grid, and writes the result as GeoZarr.</p>
 <h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
 <p>Use Python 3.12 or newer, and install the project dependencies with Poetry.
 The model also requires R with the <code class="docutils literal notranslate"><span class="pre">fmesher</span></code> and <code class="docutils literal notranslate"><span class="pre">INLA</span></code> packages installed.
-The supplied <code class="docutils literal notranslate"><span class="pre">create.sh</span></code> script creates a Conda environment named
-<code class="docutils literal notranslate"><span class="pre">inla_env</span></code> with Python, R, and those R packages:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./create.sh
-conda<span class="w"> </span>activate<span class="w"> </span>inla_env
+The supplied <code class="docutils literal notranslate"><span class="pre">create-conda-env-with-R.sh</span></code> script creates a Conda environment named
+<code class="docutils literal notranslate"><span class="pre">dtc_gaussian_random_field</span></code> with Python, R, and those R packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./create-conda-env-with-R.sh
+conda<span class="w"> </span>activate<span class="w"> </span>dtc_gaussian_random_field
 poetry<span class="w"> </span>install
 </pre></div>
 </div>

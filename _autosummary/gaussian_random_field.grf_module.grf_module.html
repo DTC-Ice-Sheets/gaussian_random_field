@@ -199,20 +199,16 @@ they appear in the dataset.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ds</strong> (<em>xr.Dataset</em>) – <p>The xarray dataset containing the point data to be modeled.
 This must have the following dimensions:</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p>time (must be of length 1)</p></li>
 <li><p>point_id (flattened spatial coordinates)</p></li>
 </ul>
-</div></blockquote>
-<dl class="simple">
-<dt>The dataset must also contain the following variables:</dt><dd><ul>
+<p>The dataset must also contain the following variables:</p>
+<ul>
 <li><p>x</p></li>
 <li><p>y</p></li>
 <li><p>Any number of spatial variables, with dimensions (“time”, “point_id”)</p></li>
 </ul>
-</dd>
-</dl>
 </p></li>
 <li><p><strong>spde_mesh</strong> (<a class="reference internal" href="gaussian_random_field.grf_module.spde_mesh.html#gaussian_random_field.grf_module.spde_mesh.SpdeMesh" title="gaussian_random_field.grf_module.spde_mesh.SpdeMesh"><em>SpdeMesh</em></a>) – The SPDE mesh object containing the mesh and SPDE model</p></li>
 <li><p><strong>reproducible</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, run INLA single-threaded in classic mode and seed the
@@ -222,17 +218,14 @@ default mode. Default False.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>A dataset containing the model results, with dimensions:</dt><dd><ul class="simple">
+<dd class="field-even"><p><p>A dataset containing the model results, with dimensions:</p>
+<ul class="simple">
 <li><p>time (length 1)</p></li>
 <li><p>vertex_id (length equal to the number of vertices in the mesh)</p></li>
 </ul>
-</dd>
-</dl>
 <p>The dataset will contain the following variables for each input
 spatial variable:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>{name}: Output values of dimensions (“time”, “vertex_id”)</p></li>
 <li><p>{name}_mean: Output mean of dimensions (“time”)</p></li>
 <li><p>{name}_uncertainty: posterior sd of the fitted value at each
@@ -240,7 +233,6 @@ vertex, dimensions (“time”, “vertex_id”)</p></li>
 <li><p>{name}_uncertainty_mean: posterior sd of the spatial mean of
 the fitted field, dimensions (“time”)</p></li>
 </ul>
-</div></blockquote>
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
