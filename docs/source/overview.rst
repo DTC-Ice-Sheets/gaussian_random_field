@@ -30,7 +30,8 @@ INLA represents in finite-element form over a triangular mesh and solves by
 approximate Bayesian inference (Lindgren, Rue and Lindström, 2011,
 `doi:10.1111/j.1467-9868.2011.00777.x
 <https://doi.org/10.1111/j.1467-9868.2011.00777.x>`_). The model is fitted with
-a Gaussian likelihood and a penalised-complexity prior on the range.
+a Gaussian likelihood and penalised-complexity priors on the range and on the
+marginal standard deviation of the field.
 
 The **mesh** is not built here. It ships with the module as a stored R object -
 one is included, covering the Watson catchment in west Greenland with 295
