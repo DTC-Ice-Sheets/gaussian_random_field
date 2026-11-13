@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "gaussian_random_field"
-version = "0.0.3"
+version = "0.0.4"
 description = "DTC-IS module that fits a Gaussian random field to spatially distributed ice-sheet data, bringing variables of different resolution and sampling onto a shared grid with uncertainty."
 authors = [
     "Amber Leeson <a.leeson@lancaster.ac.uk>",
