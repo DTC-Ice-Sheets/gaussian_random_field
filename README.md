@@ -1,6 +1,6 @@
 ![Tests](https://github.com/dtc-ice-sheets/gaussian_random_field/actions/workflows/gaussian_random_field_test.yml/badge.svg)
 ![Deployment](https://github.com/dtc-ice-sheets/gaussian_random_field/actions/workflows/gaussian_random_field_deploy.yml/badge.svg)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/DTC-Ice-Sheets/gaussian_random_field/blob/main/LICENSE)
+[![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/DTC-Ice-Sheets/gaussian_random_field/blob/main/LICENSE)
 
 # DTC-IS _Gaussian Random Field_
 

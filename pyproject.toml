@@ -10,7 +10,7 @@ authors = [
     "Amber Leeson <a.leeson@lancaster.ac.uk>",
     "DTC-IS consortium <support@dtc-ice-sheets.org>",
 ]
-license = "MIT"
+license = "GPL-3.0-or-later"
 readme = "README.md"
 homepage = "https://github.com/dtc-ice-sheets/gaussian_random_field"
 packages = [{ include = "gaussian_random_field", from = "src" }]
