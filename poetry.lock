@@ -3489,29 +3489,30 @@ dev = ["pytest", "setuptools"]
 
 [[package]]
 name = "xarray"
-version = "2025.12.0"
+version = "2026.9.0"
 description = "N-D labeled arrays and datasets in Python"
 optional = false
 python-versions = ">=3.11"
 groups = ["main"]
 files = [
-    {file = "xarray-2025.12.0-py3-none-any.whl", hash = "sha256:9e77e820474dbbe4c6c2954d0da6342aa484e33adaa96ab916b15a786181e970"},
-    {file = "xarray-2025.12.0.tar.gz", hash = "sha256:73f6a6fadccc69c4d45bdd70821a47c72de078a8a0313ff8b1e97cd54ac59fed"},
+    {file = "xarray-2026.9.0-py3-none-any.whl", hash = "sha256:fe349fa871628b1a0a5217af3fe1283a2862d5485156e6eda354fffb81c3bb7c"},
+    {file = "xarray-2026.9.0.tar.gz", hash = "sha256:6abc69694c22fa1f0fb2f357ff4e41d88beb4477ed71091f944b7dbf67ed54fe"},
 ]
 
 [package.dependencies]
 numpy = ">=1.26"
-packaging = ">=24.1"
+packaging = ">=24.2"
 pandas = ">=2.2"
 
 [package.extras]
-accel = ["bottleneck", "flox (>=0.9)", "numba (>=0.62)", "numbagg (>=0.8)", "opt_einsum", "scipy (>=1.13)"]
+accel = ["bottleneck", "flox (>=0.10)", "numba (>=0.62)", "numbagg (>=0.9,!=0.9.5)", "opt_einsum", "scipy (>=1.15)"]
+arrow = ["pyarrow"]
 complete = ["xarray[accel,etc,io,parallel,viz]"]
 etc = ["sparse (>=0.15)"]
-io = ["cftime", "fsspec", "h5netcdf", "netCDF4 (>=1.6.0)", "pooch", "pydap", "scipy (>=1.13)", "zarr (>=2.18)"]
+io = ["cftime", "fsspec", "h5netcdf[h5py] (>=1.8.0)", "netCDF4 (>=1.6.0)", "pooch", "pydap", "scipy (>=1.15)", "zarr (>=3.0)"]
 parallel = ["dask[complete]"]
-types = ["pandas-stubs", "scipy-stubs", "types-PyYAML", "types-Pygments", "types-colorama", "types-decorator", "types-defusedxml", "types-docutils", "types-networkx", "types-openpyxl", "types-pexpect", "types-psutil", "types-pycurl", "types-python-dateutil", "types-pytz", "types-requests", "types-setuptools"]
-viz = ["cartopy (>=0.23)", "matplotlib (>=3.8)", "nc-time-axis", "seaborn"]
+types = ["pandas-stubs", "scipy-stubs", "types-PyYAML", "types-Pygments", "types-colorama", "types-decorator", "types-defusedxml", "types-docutils", "types-gevent", "types-networkx", "types-openpyxl", "types-pexpect", "types-psutil", "types-pycurl", "types-pysocks", "types-python-dateutil", "types-pytz", "types-requests", "types-setuptools", "types-xlrd"]
+viz = ["cartopy (>=0.24)", "matplotlib (>=3.10)", "nc-time-axis", "seaborn"]
 
 [[package]]
 name = "yarl"
@@ -3697,4 +3698,4 @@ remote = ["fsspec (>=2023.10.0)", "obstore (>=0.5.1)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4.0"
-content-hash = "7d6bcf5ee82c721726a7eff319e3c1981e7590ca38928aad247b76306ab8df1d"
+content-hash = "9b70885aaa1f1529d5b89cb513868b07d699e7f9c8672cbb4627445e7eeafd88"

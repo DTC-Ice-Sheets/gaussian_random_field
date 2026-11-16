@@ -19,7 +19,7 @@ packages = [{ include = "gaussian_random_field", from = "src" }]
 python = ">=3.12,<4.0"
 numpy = "^2.3"
 rpy2 = "^3.6.4"
-xarray = "^2025.12.0"
+xarray = ">=2025.12,<2027.0"
 zarr = "^3.1.2"
 dask = { extras = ["array"], version = "^2026.8.0" }
 shapely = "^2.1.2"
