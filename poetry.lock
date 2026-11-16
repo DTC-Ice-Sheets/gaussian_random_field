@@ -2733,18 +2733,18 @@ tests = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "rioxarray"
-version = "0.19.0"
+version = "0.20.0"
 description = "geospatial xarray extension powered by rasterio"
 optional = false
-python-versions = ">=3.10"
+python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "rioxarray-0.19.0-py3-none-any.whl", hash = "sha256:494ee4fff1781072d55ee5276f5d07b63d93b05093cb33b926a12186ba5bb8ef"},
-    {file = "rioxarray-0.19.0.tar.gz", hash = "sha256:7819a0036fd874c8c8e280447cbbe43d8dc72fc4a14ac7852a665b1bdb7d4b04"},
+    {file = "rioxarray-0.20.0-py3-none-any.whl", hash = "sha256:197b0638146dfc6093ef52f8bf8afb42757ca16bc2e0d87b6282ce54170c9799"},
+    {file = "rioxarray-0.20.0.tar.gz", hash = "sha256:8bfc7e979edc7e30b4671d638a9be0e5a7d673dab2ea88e2445d3c7745599c02"},
 ]
 
 [package.dependencies]
-numpy = ">=1.23"
+numpy = ">=2"
 packaging = "*"
 pyproj = ">=3.3"
 rasterio = ">=1.4.3"
@@ -3697,4 +3697,4 @@ remote = ["fsspec (>=2023.10.0)", "obstore (>=0.5.1)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4.0"
-content-hash = "7d6bcf5ee82c721726a7eff319e3c1981e7590ca38928aad247b76306ab8df1d"
+content-hash = "de4bbc9de78d459150921584b12b00521d42a5bf51554e4afb031aa555bc3f04"
